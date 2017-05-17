@@ -1,0 +1,21 @@
+{
+    "name": "kerstingerull/microsymfony",
+    "description": "Build a minimalistic symfony application on my own (learning)",
+    "authors": [
+        {
+            "name": "Kerstin Gerull",
+            "email": "kgerull@notebooksbilliger.de"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php"
+        ]
+    }
+}
