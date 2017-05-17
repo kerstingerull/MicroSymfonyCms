@@ -1,73 +1,30 @@
-Build composer.json
-===================
+Copy kerstingerull/microsymfony to new repository
+=================================================
 
-* composer init
-    * composer is already installed globally
+* on github you can import an existing repository to a newly created
+
+Change existing project to new repository
+=========================================
+
+* git remote remove origin
+* git remote add origin https://github.com/kerstingerull/MicroSymfonyCms.git
+* git remote show origin
+    * to check the repository
     
-Adding README.md
-================
+Changed the TestBundle to PageBundle
+====================================
 
-* to add this text here :)
-
-Install symfony with composer
-=============================
-
-* composer install
-
-Add index.php as starting point
-===============================
-
-* add app/AppKernel
-* try to use it
-    * autoload is missing
-
-Add Autoload
-============
-
-* vendor/autoload.php is already there and returns a loader
-    * now the Request is available, but AppKernel is missing
-
-* add app/autoload.php and load this in index.php instead of vendor/autoload.php
-    * require the vendor/autoload.php in this
-    * still the Request is available, but AppKernel is missing
-
-* autoloading is added in the composer.json by hand
-    * then run composer dumpautoload
-
-To see something
-================
-
-* add Bundle
-    * add Bundle.php and Controller with test Action
-* add Bundle and Symfony Framework to AppKernel
-* add routing
-    * which needs secret and router configuration for the framework (config.yml)
+* tried to add a routing for parameters
+    * does not work :(
     
-the final directories and folders (for git)
-===========================================
+Added bin/console
+=================
 
-the other stuff is generated, eg.
-composer.json, the cache and log files in var/*, the whole vendor directory
-```
-|-- root
-    |-- app
-        |-- config
-            |-- config.yml
-            |-- config_dev.yml
-            |-- parameters.yml
-            |-- routing.yml
-        |-- AppKernel.php
-        |-- autoload.php
-    |-- src
-        |-- TestBundle
-            |-- Controller
-                |-- TestController.php
-        |-- TestBundle.php
-    |-- composer.json
-    |-- index.php
-    |-- README.md (this file)
-```
+* to be able to clear cache
+```php bin/console cache:clear```
 
-add existing project to github
-==============================
-https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+Fixed Routing
+=============
+
+* added .htaccess file from my big symfony project
+    * changed app.php to index.php
