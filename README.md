@@ -1,24 +1,28 @@
-##Build composer.json
-
+Build composer.json
+===================
 
 * composer init
     * composer is already installed globally
     
-##Adding README.md
+Adding README.md
+================
 
 * to add this text here :)
 
-##Install symfony with composer
+Install symfony with composer
+=============================
 
 * composer install
 
-##Add index.php as starting point
+Add index.php as starting point
+===============================
 
 * add app/AppKernel
 * try to use it
     * autoload is missing
 
-##Add Autoload
+Add Autoload
+============
 
 * vendor/autoload.php is already there and returns a loader
     * now the Request is available, but AppKernel is missing
@@ -30,7 +34,8 @@
 * autoloading is added in the composer.json by hand
     * then run composer dumpautoload
 
-##To see something
+To see something
+================
 
 * add Bundle
     * add Bundle.php and Controller with test Action
@@ -38,7 +43,9 @@
 * add routing
     * which needs secret and router configuration for the framework (config.yml)
     
-##the final directories and folders (for git)
+the final directories and folders (for git)
+===========================================
+
 the other stuff is generated, eg.
 composer.json, the cache and log files in var/*, the whole vendor directory
 ```
@@ -61,5 +68,6 @@ composer.json, the cache and log files in var/*, the whole vendor directory
     |-- README.md (this file)
 ```
 
-##add existing project to github
+add existing project to github
+==============================
 https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
