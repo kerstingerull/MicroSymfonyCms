@@ -5,8 +5,9 @@ framework:
     secret: "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
+    templating:
+        engines: ['twig']
 
-# Doctrine Configuration
 doctrine:
     dbal:
         driver:   pdo_mysql
@@ -20,3 +21,7 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"

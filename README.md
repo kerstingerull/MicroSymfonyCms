@@ -51,3 +51,13 @@ Creating Database
     
 ```php bin/console doctrine:schema:update```
 * does create the database table with --force
+
+Adding Twig Template
+====================
+* no need to install something
+    * just add TwigBundle to AppKernel
+
+Adding Debugging
+================
+* no need to install something
+    * just add DebugBundle to AppKernel when env is dev or test

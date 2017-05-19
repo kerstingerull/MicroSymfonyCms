@@ -15,6 +15,11 @@ class PageController extends Controller
     {
         $link = $this->get('router')->generate('page', ['page' => $page]);
 
-        return new Response('Page Text: ' . $page . ' - ' . $link);
+        $variables = [
+            'page' => $page,
+            'link' => $link
+        ];
+
+        return $this->render('@PageBundle/Ressources/views/page/layout.html.twig', $variables);
     }
 }

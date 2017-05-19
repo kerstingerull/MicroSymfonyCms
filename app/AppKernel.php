@@ -10,8 +10,13 @@ class AppKernel extends Kernel
         $bundles = [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new \Symfony\Bundle\TwigBundle\TwigBundle(),
             new \PageBundle\PageBundle()
         ];
+
+        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
+            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
+        }
 
         return $bundles;
     }
