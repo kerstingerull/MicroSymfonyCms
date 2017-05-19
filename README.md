@@ -61,3 +61,11 @@ Adding Debugging
 ================
 * no need to install something
     * just add DebugBundle to AppKernel when env is dev or test
+
+Adding ParamConverter for Controller Action
+===========================================
+
+```composer require sensio/framework-extra-bundle```
+
+Adding Error Pages
+==================

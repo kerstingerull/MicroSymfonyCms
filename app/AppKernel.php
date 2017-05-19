@@ -9,9 +9,10 @@ class AppKernel extends Kernel
     {
         $bundles = [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \PageBundle\PageBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \PageBundle\PageBundle()
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

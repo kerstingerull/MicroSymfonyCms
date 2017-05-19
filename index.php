@@ -10,6 +10,7 @@ ini_set('display_errors', '1');
 $loader = require __DIR__.'/app/autoload.php';
 
 $kernel = new AppKernel('dev', true);
+//$kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
 
 $request = Request::createFromGlobals();

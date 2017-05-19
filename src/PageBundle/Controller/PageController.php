@@ -2,22 +2,29 @@
 
 namespace PageBundle\Controller;
 
+use PageBundle\Entity\Page;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class PageController extends Controller
 {
     /**
-     * @param integer $page
+     * @param Page $page
+     * @ParamConverter("page", class="PageBundle:Page")
      * @return Response
      */
-    public function pageAction($page)
+    public function pageAction(Page $page)
     {
-        $link = $this->get('router')->generate('page', ['page' => $page]);
+        $link = $this->get('router')->generate('page', ['page' => $page->getId()]);
+        $canonical = $this->get('router')->generate('page', ['page' => $page->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
 
         $variables = [
-            'page' => $page,
-            'link' => $link
+            'pageId' => $page->getId(),
+            'title' => $page->getTitle(),
+            'link' => $link,
+            'canonical' => $canonical
         ];
 
         return $this->render('@PageBundle/Ressources/views/page/layout.html.twig', $variables);

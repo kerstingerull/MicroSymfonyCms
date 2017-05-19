@@ -1,1 +1,11 @@
-Hi Template der Seite {{ page }} mit dem Link '{{ link }}'.
+{#
+{% extends 'PageBundle::base.html.twig' %}
+#}
+{% extends '@PageBundle/Ressources/views/base.html.twig' %}
+
+{% block title %}{{ title }} | Kerstin Gerull{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ canonical }}" />{% endblock %}
+
+{% block content %}
+Template der Seiten Id {{ pageId }}.
+{% endblock %}
