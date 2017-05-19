@@ -28,3 +28,26 @@ Fixed Routing
 
 * added .htaccess file from my big symfony project
     * changed app.php to index.php
+    
+Adding Database connection
+==========================
+* adding doctrine with composer   
+```composer require doctrine/orm```  
+```composer require doctrine/doctrine-bundle```  
+
+Creating Database
+=================
+
+```php bin/console doctrine:generate:entities PageBundle:Page```  
+* does not work
+
+```php bin/console doctrine:mapping:info```  
+* check mapping
+    * ORM Mapping is missing
+    * only getters and setters does not work
+    * have to add @ORM data
+* now doctrine:generate:entities work
+    * but does not create database table
+    
+```php bin/console doctrine:schema:update```
+* does create the database table with --force
