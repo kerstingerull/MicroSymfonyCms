@@ -11,7 +11,6 @@ $loader = require __DIR__.'/app/autoload.php';
 
 $kernel = new AppKernel('dev', true);
 //$kernel = new AppKernel('prod', false);
-$kernel->loadClassCache();
 
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);

@@ -69,3 +69,8 @@ Adding ParamConverter for Controller Action
 
 Adding Error Pages
 ==================
+
+* only visible for prod
+* the cache needs to be cleared 
+
+```sudo php bin/console cache:clear --env prod```
